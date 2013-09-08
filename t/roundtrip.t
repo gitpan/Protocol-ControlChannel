@@ -17,12 +17,14 @@ my @cases = (
 );
 my $cc = new_ok('Protocol::ControlChannel');
 for my $case (@cases) {
-	ok(my $data = $cc->create_frame(@$case), 'create a frame');
+	my ($k, $v) = @$case;
+	$v = Encode::encode('UTF-8' => $v);
+	ok(my $data = $cc->create_frame($k, $v), 'create a frame');
 	ok(length($data), 'data is non-empty');
 	ok(my $frame = $cc->extract_frame(\$data), 'extract that frame');
 	is(length($data), 0, 'data is now empty');
-	is($frame->{key}, $case->[0], 'key is correct');
-	is($frame->{value}, $case->[1], 'value is correct');
+	is($frame->{key}, $k, 'key is correct');
+	is($frame->{value}, $v, 'value is correct');
 }
 
 done_testing;

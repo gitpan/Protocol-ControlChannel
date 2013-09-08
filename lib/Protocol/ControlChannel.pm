@@ -3,7 +3,7 @@ package Protocol::ControlChannel;
 use strict;
 use warnings;
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
 =head1 NAME
 
@@ -11,7 +11,7 @@ Protocol::ControlChannel - simple binary protocol for exchanging key/value pairs
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 SYNOPSIS
 
@@ -50,6 +50,10 @@ L<Sereal> support will be added soon.
 Usage is simple: instantiate, call methods, if anything returns undef then things have
 gone wrong so you're advised to terminate that session. If you're exchanging packets
 via UDP then this may not be so simple.
+
+Note that content is either Perl data structures (i.e. a reference), or byte
+data. If you have a string, you'll need to pick a suitable encoding and
+decoding - probably UTF-8.
 
 =cut
 

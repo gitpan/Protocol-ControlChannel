@@ -9,6 +9,7 @@ README
 SIGNATURE
 cpanfile
 dist.ini
+examples/events.pl
 lib/Protocol/ControlChannel.pm
 t/00-check-deps.t
 t/00-compile.t

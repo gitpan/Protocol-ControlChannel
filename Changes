@@ -1,4 +1,10 @@
 Revision history for Protocol-ControlChannel
 
+0.002     2013-09-08 18:10:51 Europe/London
+	Test fixes:
+	* roundtrip.t now encodes content to bytes: content is either byte
+	data or a ref for encoding via Storable, so plain perl strings need
+	an encoding applied.
+
 0.001     2013-09-02 01:00:12 Europe/London
 	Initial CPAN release
