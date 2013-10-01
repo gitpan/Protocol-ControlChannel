@@ -24,12 +24,12 @@ my %WriteMakefileArgs = (
     "Storable" => 0
   },
   "TEST_REQUIRES" => {
-    "Capture::Tiny" => 0,
-    "Test::CheckDeps" => "0.006",
-    "Test::More" => "0.98",
-    "blib" => 0
+    "File::Spec" => 0,
+    "IO::Handle" => 0,
+    "IPC::Open3" => 0,
+    "Test::More" => "0.98"
   },
-  "VERSION" => "0.002",
+  "VERSION" => "0.003",
   "test" => {
     "TESTS" => "t/*.t"
   }
